@@ -45,7 +45,8 @@ vm.runInContext(`
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 assert(html.includes('霸服'));
 assert(html.includes('玄学负责气氛，'));
-for (const match of html.matchAll(/(?:src|href)="([^"]+\.(?:js|css))"/g)) {
-  assert(readFileSync(new URL(`../${match[1]}`, import.meta.url)).length > 0);
+assert(!/[✳✴✷✿☀⚡☺]/u.test(html), 'Decorations must not depend on emoji fonts');
+for (const match of html.matchAll(/(?:src|href)="([^"]+\.(?:js|css)(?:\?[^"]*)?)"/g)) {
+  assert(readFileSync(new URL(`../${match[1].split('?')[0]}`, import.meta.url)).length > 0);
 }
 console.log('Validated all seven catalogues, tarot reversals, 64 hexagram diagrams and site assets.');
