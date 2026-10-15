@@ -1,0 +1,21 @@
+<view wx:if="{{view}}" class="reading" style="background:{{view.tint}}">
+  <view class="reading-header" bindtap="toggle">
+    <image class="thumb" src="{{view.image}}" mode="aspectFit" style="transform:rotate({{view.rotation}}deg)" />
+    <view class="reading-copy"><view class="reading-title">{{view.title}}</view><view class="small">{{view.name}}</view></view>
+    <text class="toggle">{{open ? '收起' : '详情'}}</text>
+  </view>
+  <view wx:if="{{open}}" class="reading-content">
+    <view class="art-pair">
+      <image class="face" src="{{view.image}}" mode="aspectFit" style="transform:rotate({{view.rotation}}deg)" />
+      <image wx:if="{{view.changedImage}}" class="face" src="{{view.changedImage}}" mode="aspectFit" />
+    </view>
+    <view class="reading-subtitle">{{view.subtitle}}</view>
+    <view class="facts"><text wx:for="{{view.facts}}" wx:key="*this">{{item}}</text></view>
+    <view wx:for="{{view.sections}}" wx:key="title" class="section">
+      <view wx:if="{{item.paragraphs.length}}" class="section-title">{{item.title}}</view>
+      <text wx:for="{{item.paragraphs}}" wx:for-item="paragraph" wx:key="*this" class="paragraph" selectable="{{true}}">{{paragraph}}</text>
+    </view>
+    <view wx:if="{{view.action}}" class="action-tip"><view class="section-title">把这份加持落到今天</view><view class="paragraph">{{view.action}}</view></view>
+    <button wx:if="{{view.source}}" class="source-button" bindtap="copySource">复制 Wiki 资料地址</button>
+  </view>
+</view>

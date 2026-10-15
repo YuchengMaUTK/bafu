@@ -1,0 +1,58 @@
+.ritual-overlay{position:fixed;inset:0;background:#29282080;z-index:100;display:flex;align-items:center;justify-content:center;padding:30rpx}
+.ritual-dialog{width:100%;max-width:680rpx;background:#fffdf7;border-radius:38rpx;padding:48rpx 32rpx 32rpx;position:relative;text-align:center;box-shadow:0 24rpx 70rpx #34244730}
+.close{position:absolute;top:20rpx;right:20rpx;width:64rpx;height:64rpx;border-radius:50%;background:#eee8df;padding:0;display:flex;align-items:center;justify-content:center}
+.close-line{position:absolute;width:26rpx;height:3rpx;background:#7a705e}
+.close-line.a{transform:rotate(45deg)}.close-line.b{transform:rotate(-45deg)}
+.ritual-title{font-size:35rpx;font-weight:800;line-height:1.5;margin:20rpx 26rpx}
+.ritual-caption{font-size:25rpx;line-height:1.8;color:#82796b;margin:12rpx 0 28rpx}
+.ritual-progress{height:10rpx;background:#ede5f4;border-radius:10rpx;overflow:hidden}
+.ritual-progress view{height:100%;background:#a182bf}
+.ritual-note{font-size:21rpx;color:#aaa18f;margin-top:20rpx}
+.single-stage{height:410rpx;position:relative;display:flex;align-items:center;justify-content:center;perspective:900rpx}
+.single-glow{position:absolute;width:310rpx;height:310rpx;background:#f3e6c5;border-radius:50%;animation:glow 1.4s ease-in-out infinite}
+.ritual-art{width:290rpx;height:330rpx;position:relative;z-index:2}
+.art-sign{animation:shake .5s ease-in-out infinite}
+.art-tarot{animation:shuffle 1s ease-in-out infinite}
+.deck-second{position:absolute;width:280rpx;height:320rpx;animation:shuffle 1s .5s ease-in-out infinite;z-index:1}
+.art-stars{animation:glow 1.2s ease-in-out infinite}
+.art-rune{animation:float 1.5s ease-in-out infinite}
+.art-myth{animation:float 2s ease-in-out infinite}
+.book-page{position:absolute;left:50%;top:116rpx;width:88rpx;height:192rpx;background:#fff3dc;border:2rpx solid #b58c71;border-radius:8rpx;transform-origin:left center;z-index:3;animation:turn 1.2s ease-in-out infinite}
+.art-cookie{animation:break-cookie 2.6s ease-out both}
+.paper{position:absolute;bottom:68rpx;width:230rpx;height:56rpx;background:#fffdf5;border:2rpx solid #beac90;z-index:4;animation:unroll 2.6s ease-out both;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10rpx}
+.paper view{width:140rpx;height:2rpx;background:#d6bd95}
+.star-orbit{position:absolute;width:330rpx;height:330rpx;border:2rpx dashed #8fa9cf;border-radius:50%;animation:spin 3s linear infinite}
+.star-orbit view{width:15rpx;height:15rpx;background:#deb759;border-radius:50%;position:absolute;left:48%;top:-8rpx}
+.fusion-stage{height:470rpx;position:relative;margin:20rpx 0}
+.halo{position:absolute;left:50%;top:50%;width:300rpx;height:300rpx;border:2rpx dashed #d4ba82;border-radius:50%;transform:translate(-50%,-50%);animation:halo 4s linear infinite}
+.halo-two{width:400rpx;height:400rpx;animation-direction:reverse;border-color:#cfbddc}
+.fusion-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:130rpx;height:130rpx;border-radius:50%;background:#f5d780;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:32rpx;font-weight:800;line-height:1.5;color:#806136;box-shadow:0 0 0 16rpx #faedba80}
+.orbit{position:absolute;width:104rpx;text-align:center;animation:gather 4.4s ease-in-out both}
+.orbit image{width:90rpx;height:110rpx}.orbit text{display:block;font-size:19rpx;color:#847459}
+.fusion-sign{animation:shake .6s ease-in-out infinite}.fusion-tarot{animation:shuffle 1s ease-in-out infinite}
+.fusion-stars{animation:glow 1.2s ease-in-out infinite}.fusion-rune,.fusion-myth{animation:float 1.5s ease-in-out infinite}
+.fusion-liuyao{animation:toss .7s ease-in-out infinite}.fusion-cookie{animation:break-cookie 2.6s ease-out infinite}
+.orbit-0{left:12%;top:6%}.orbit-1{right:12%;top:6%;animation-delay:.04s}
+.orbit-2{left:1%;top:39%;animation-delay:.08s}.orbit-3{right:1%;top:39%;animation-delay:.12s}
+.orbit-4{left:14%;bottom:0;animation-delay:.16s}.orbit-5{right:14%;bottom:0;animation-delay:.2s}
+.orbit-6{left:calc(50% - 52rpx);top:-5%;animation-delay:.24s}
+.coins{display:flex;justify-content:center;gap:30rpx;margin:28rpx 0}
+.coin{width:88rpx;height:88rpx;border-radius:50%;border:8rpx double #8b6540;background:#dfbf75;display:flex;align-items:center;justify-content:center;animation:toss .6s ease-in-out infinite}
+.coin-1{animation-delay:.08s}.coin-2{animation-delay:.16s}
+.square-hole{width:23rpx;height:23rpx;background:#fffdf7;border:3rpx solid #8b6540}
+.coin-stage{height:460rpx}.cast-lines{margin:24rpx auto;width:360rpx;min-height:260rpx}
+.cast-line{display:flex;align-items:center;gap:20rpx;font-size:23rpx;margin:12rpx 0;animation:reveal .3s ease-out}
+.cast-line text{width:75rpx}.yao{width:160rpx;display:flex;justify-content:space-between}
+.yao view{width:43%;height:10rpx;background:#8a6543}.yao.yang view:first-child{width:100%}.yao.yang view:last-child{display:none}
+@keyframes shake{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg) translateY(-10rpx)}}
+@keyframes shuffle{0%,100%{transform:translateX(-26rpx) rotate(-12deg)}50%{transform:translateX(26rpx) rotate(12deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24rpx)}}
+@keyframes glow{0%,100%{opacity:.6;transform:scale(.94)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes turn{0%{transform:rotateY(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:rotateY(-165deg);opacity:0}}
+@keyframes break-cookie{0%{transform:scale(.85) rotate(-8deg);opacity:.35}45%{transform:scale(1.04) rotate(3deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+@keyframes unroll{0%,30%{transform:scaleX(.1);opacity:0}80%,100%{transform:scaleX(1);opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes halo{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes gather{0%{transform:scale(.5);opacity:0}15%{transform:scale(1);opacity:1}55%{transform:translateY(-14rpx) rotate(8deg)}80%{transform:scale(1.12) rotate(-5deg)}100%{transform:scale(1);opacity:1}}
+@keyframes toss{0%,100%{transform:translateY(0) rotateY(0)}50%{transform:translateY(-30rpx) rotateY(180deg)}}
+@keyframes reveal{from{opacity:0;transform:translateY(10rpx)}to{opacity:1;transform:translateY(0)}}

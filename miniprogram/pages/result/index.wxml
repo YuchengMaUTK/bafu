@@ -1,0 +1,24 @@
+<view class="page">
+  <view wx:if="{{full}}" class="completion">
+    <view class="sun-rays"><view wx:for="{{[0,1,2,3,4,5,6,7,8,9,10,11]}}" wx:key="*this" class="sun-ray" style="transform:rotate({{index * 30}}deg)"></view></view>
+    <view class="completion-body"><view class="kicker">ALL BUFFS ACTIVATED · 7 / 7</view>
+      <view class="heading"><view>好运叠满，</view><view>今天轮到你闪耀！</view></view>
+      <view class="subtitle">全部加持已到齐，进退都有一份底气。</view>
+      <view class="completion-meter">今日好运状态 <text>满格出发</text></view>
+      <view class="completion-track"><view></view></view><view class="small">{{date}} · 你的今日出门卡</view>
+    </view>
+    <view wx:for="{{[0,1,2,3,4,5,6,7,8,9,10,11]}}" wx:key="*this" class="confetti confetti-{{index}}"></view>
+  </view>
+  <view wx:elif="{{catalogueMode}}" class="page-title">好运图鉴</view>
+  <view wx:else class="page-title">我的今日加持</view>
+  <view wx:if="{{!full && !catalogueMode}}" class="small">{{date}} · {{views.length}} 份好运已装进口袋</view>
+  <view wx:if="{{tarot}}" class="actions"><button class="{{!reversed ? 'primary' : 'secondary'}}" data-reversed="false" bindtap="orientation">正位 · 发挥力量</button><button class="{{reversed ? 'primary' : 'secondary'}}" data-reversed="true" bindtap="orientation">逆位 · 调整提醒</button></view>
+  <view class="results"><buff-reading wx:for="{{views}}" wx:key="id" view="{{item}}" expanded="{{single}}" /></view>
+  <view wx:if="{{!views.length}}" class="empty"><view>还没有这份好运记录。</view><view>从今天的第一份 Buff 开始吧。</view></view>
+  <view wx:if="{{views.length && !catalogueMode}}" class="actions"><button class="primary" bindtap="exportCard" loading="{{exporting}}" disabled="{{exporting}}">生成出门卡</button><button class="secondary" bindtap="copy">复制文案</button></view>
+  <view wx:if="{{views.length && !catalogueMode}}" class="small">生成图片后长按保存。微信分享会邀请朋友打开霸服，不会公开你的本地记录。</view>
+  <button wx:if="{{views.length}}" class="secondary" open-type="share" style="margin-top:24rpx">分享霸服给朋友</button>
+  <button class="quiet" bindtap="home">回到首页</button>
+  <view wx:if="{{full}}" class="footer"><view>抬头，挺胸，带着这份底气出门。</view><text class="purple">接下来的主场，交给你。</text></view>
+</view>
+<canvas type="2d" id="departureCanvas" class="export-canvas"></canvas>

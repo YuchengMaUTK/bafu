@@ -24,6 +24,9 @@ jobs:
         run: |
           for file in *.js; do node --check "$file"; done
           node scripts/validate.mjs
+          node scripts/build-miniprogram-data.mjs
+          git diff --exit-code -- miniprogram/data miniprogram/assets
+          node scripts/test-miniprogram.mjs
       - name: Prepare static site
         run: |
           mkdir public

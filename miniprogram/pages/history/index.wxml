@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="kicker">YOUR LITTLE LUCK JOURNAL</view><view class="page-title">我的记录</view>
+  <view class="subtitle">把每天的一点点好运，收进自己的口袋。</view>
+  <view class="actions"><button class="secondary" bindtap="backup">复制记录备份</button><button class="secondary" bindtap="toggleImport">{{importing ? '取消导入' : '导入备份'}}</button></view>
+  <view wx:if="{{importing}}" class="panel"><view class="small">粘贴霸服网页或小程序导出的 JSON 备份；同一天冲突时保留本地已有结果。</view><textarea class="form-input form-textarea" value="{{backupText}}" bindinput="input" maxlength="1000000" placeholder="粘贴完整记录备份" /><button class="primary" bindtap="importBackup" style="margin-top:20rpx">导入记录</button></view>
+  <view class="small">记录保存在当前设备的小程序里。清除数据或更换设备前，建议先复制备份。</view>
+  <view wx:for="{{records}}" wx:key="date" class="panel row" bindtap="open" data-date="{{item.date}}"><view><view class="bold">{{item.date}}</view><view class="small">{{item.count}} / 7 份 Buff · {{item.full ? '满格出发' : '一点点积累好运'}}</view></view><text class="text-link">查看</text></view>
+  <view wx:if="{{!records.length}}" class="empty"><view>还没有出门记录。</view><view>从今天的第一份 Buff 开始吧。</view></view>
+</view>

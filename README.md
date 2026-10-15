@@ -32,6 +32,17 @@
 
 页面运行不调用 LLM，也不向服务器发送抽取结果。所有插画都是项目原创 SVG，运行时资源均随站点提供。
 
+## 微信小程序开发版
+
+仓库提供原生 WXML / WXSS / JavaScript 小程序，目录为 [`miniprogram`](miniprogram/README.md)。用微信开发者工具导入该目录即可开始检查；发布和真机预览需要自己的真实 AppID。
+
+包含七项抽取、单项动画、融合仪式、结果、完整图鉴、记录和本地出门卡；内容与插画由网页源文件生成，备份兼容网页记录。当前通过内容、纯逻辑和模拟微信 API 的自动验证；尚未经过微信开发者工具编译、真机测试或微信审核。
+
+```bash
+node scripts/build-miniprogram-data.mjs
+node scripts/test-miniprogram.mjs
+```
+
 ## 本地运行
 
 ```bash

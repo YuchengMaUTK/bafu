@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="brand"><view class="wordmark">霸服</view><view class="brand-copy">玄学负责气氛，<view class="purple">你负责人生。</view></view></view>
+  <view class="kicker">A LITTLE LUCK BEFORE YOU GO</view>
+  <view class="heading"><view>每天出门，</view><view>叠满好运。</view></view>
+  <view class="subtitle"><view>抽一签、翻张牌，收下今天的小小加持。</view><view>把好运装进口袋，再认真过好自己的今天。</view></view>
+  <view class="top-actions"><button class="secondary" bindtap="catalogue">好运图鉴</button><button class="secondary" bindtap="history">我的记录</button></view>
+  <view class="progress-card">
+    <view class="progress-line"><text>{{date}}</text><text class="bold">{{count}} / {{total}}</text></view>
+    <view class="progress-track"><view class="progress-fill" style="width:{{percent}}%"></view></view>
+    <view class="small">{{count === total ? '今日 Buff 已叠满，准备出发！' : '还有 ' + (total - count) + ' 份好兆头，等你领取'}}</view>
+  </view>
+  <button class="primary" bindtap="drawAll" disabled="{{ritualVisible}}">{{count === total ? '再来一轮好运仪式' : '一键开启好运仪式'}}</button>
+  <view class="grid" style="margin-top:30rpx">
+    <view wx:for="{{cards}}" wx:key="id" class="buff">
+      <view class="buff-art" style="background:{{item.tint}}"><text class="buff-number">BUFF / 0{{index + 1}}</text><image src="{{item.image}}" mode="aspectFit" style="transform:rotate({{item.rotation}}deg)" /></view>
+      <view class="buff-body">
+        <view class="buff-name">{{item.name}}</view><view class="buff-description">{{item.title}}</view>
+        <button bindtap="draw" data-id="{{item.id}}" disabled="{{ritualVisible}}" style="background:{{item.tint}};color:{{item.tone}}">{{item.claimed ? '再抽一次' : '领取这份好运'}}</button>
+        <view class="buff-links"><text wx:if="{{item.claimed}}" class="text-link" bindtap="view" data-id="{{item.id}}">查看结果</text><text class="text-link" bindtap="catalogue" data-id="{{item.id}}">全部图鉴</text></view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{count === total}}" class="sendoff"><view class="sendoff-title"><view>好运叠满，</view><view>今天轮到你闪耀！</view></view><button class="primary" bindtap="summary">打开我的出门卡</button></view>
+  <view class="footer"><view>每天出门，叠满好运。</view><view>好运是个好开头，行动才是真正的加成。</view></view>
+</view>
+<buff-ritual visible="{{ritualVisible}}" kind="{{kind}}" values="{{values}}" bindcomplete="complete" bindcancel="cancel" />

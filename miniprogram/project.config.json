@@ -1,0 +1,19 @@
+{
+  "appid": "touristappid",
+  "projectname": "bafu",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "./",
+  "libVersion": "3.6.0",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "minified": true,
+    "postcss": true,
+    "urlCheck": true
+  },
+  "packOptions": {
+    "ignore": [
+      {"type": "file", "value": "README.md"}
+    ]
+  }
+}

@@ -7,3 +7,4 @@ public/
 test-results/
 playwright-report/
 *.log
+miniprogram/project.private.config.json

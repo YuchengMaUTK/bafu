@@ -1,0 +1,12 @@
+{
+  "pages": ["pages/home/index", "pages/result/index", "pages/catalogue/index", "pages/history/index"],
+  "window": {
+    "navigationBarTitleText": "霸服",
+    "navigationBarBackgroundColor": "#faf8f2",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#faf8f2"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

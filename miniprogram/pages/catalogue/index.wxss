@@ -1,0 +1,10 @@
+.tabs{margin:30rpx 0;width:100%}
+.tab-row{display:flex;gap:14rpx;width:max-content}
+.tab{white-space:nowrap;padding:20rpx 24rpx;background:#eee9e0;color:#82796b;flex-shrink:0}
+.tab text{font-size:21rpx;margin-left:5rpx;opacity:.7}.tab.active{background:#7d59a8;color:white}
+.grades{display:flex;gap:12rpx;margin-top:18rpx}
+.grades button{font-size:22rpx;padding:14rpx 18rpx;background:#eee9e0;color:#82796b}
+.grades button.selected{background:#f3dfb2;color:#977038}
+.catalogue-item{display:flex;gap:22rpx;padding:24rpx;background:#fffdf7;border:2rpx solid #e9e3d8;border-radius:22rpx;margin-bottom:18rpx}
+.catalogue-image{width:110rpx;height:140rpx;flex-shrink:0}
+.catalogue-copy{flex:1;min-width:0}.catalogue-title{font-size:28rpx;font-weight:700;line-height:1.5;margin-bottom:12rpx}

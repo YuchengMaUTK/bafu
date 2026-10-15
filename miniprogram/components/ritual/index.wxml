@@ -1,0 +1,36 @@
+<view wx:if="{{visible}}" class="ritual-overlay" catchtouchmove="noop">
+  <view class="ritual-dialog">
+    <button class="close" bindtap="cancel" aria-label="取消抽取"><view class="close-line a"></view><view class="close-line b"></view></button>
+    <view class="kicker">YOUR DAILY BUFF</view>
+    <view class="ritual-title">{{title}}</view>
+    <view wx:if="{{kind === 'all'}}" class="fusion-stage">
+      <view class="halo"></view><view class="halo halo-two"></view>
+      <view class="fusion-core"><view>好运</view><view>汇合</view></view>
+      <view wx:for="{{items}}" wx:key="id" class="orbit orbit-{{index}}">
+        <image class="fusion-art fusion-{{item.id}}" src="{{item.image}}" mode="aspectFit" /><text>{{item.name}}</text>
+      </view>
+    </view>
+    <view wx:elif="{{kind === 'liuyao'}}" class="coin-stage">
+      <view class="coins"><view wx:for="{{[0,1,2]}}" wx:key="*this" class="coin coin-{{index}}"><view class="square-hole"></view></view></view>
+      <view class="small">{{round ? '第 ' + round + ' 次 · ' + round + ' / 6' : '准备起初爻…'}}</view>
+      <view class="cast-lines">
+        <view wx:for="{{lines}}" wx:key="name" class="cast-line">
+          <text>{{item.name}}</text>
+          <view class="yao {{item.yang ? 'yang' : 'yin'}}"><view></view><view></view></view>
+          <text>{{item.value}}{{item.moving ? ' · 动' : ''}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="single-stage stage-{{kind}}">
+      <view class="single-glow"></view>
+      <image class="ritual-art art-{{kind}}" src="{{image}}" mode="aspectFit" />
+      <image wx:if="{{kind === 'tarot'}}" class="deck-second" src="{{image}}" mode="aspectFit" />
+      <view wx:if="{{kind === 'myth'}}" class="book-page"></view>
+      <view wx:if="{{kind === 'cookie'}}" class="paper"><view></view><view></view></view>
+      <view wx:if="{{kind === 'stars'}}" class="star-orbit"><view></view></view>
+    </view>
+    <view class="ritual-caption">{{kind === 'all' ? '签、牌、星光与传说，正在为你汇合。' : '给今天一个认真开始的时刻。'}}</view>
+    <view class="ritual-progress"><view style="width:{{percent}}%"></view></view>
+    <view class="ritual-note">动画结束后揭晓，关闭可取消本次抽取</view>
+  </view>
+</view>

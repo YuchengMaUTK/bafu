@@ -1,0 +1,21 @@
+.completion{position:relative;margin:-32rpx -30rpx 34rpx;padding:50rpx 30rpx 36rpx;background:#f9dc91;overflow:hidden}
+.completion-body{position:relative;z-index:1}
+.sun-rays{position:absolute;left:50%;top:70%;width:0;height:0;animation:ray-spin 25s linear infinite}
+.sun-ray{position:absolute;left:-80rpx;top:-1000rpx;width:0;height:0;border-left:80rpx solid transparent;border-right:80rpx solid transparent;border-top:1000rpx solid #ffefad80;transform-origin:80rpx 1000rpx}
+.completion .heading{font-size:48rpx}.completion .subtitle{color:#947447}
+.completion-meter{margin:28rpx 0 14rpx;font-size:24rpx;display:flex;justify-content:space-between}
+.completion-meter text{font-weight:800}
+.completion-track{height:14rpx;border-radius:10rpx;background:#ffffff80;margin-bottom:20rpx;overflow:hidden}
+.completion-track view{height:100%;width:100%;background:#b58a38;animation:fill 1s ease-out}
+.results{margin-top:28rpx}
+.export-canvas{position:fixed;left:-2000px;top:0;width:750px;height:1804px;pointer-events:none}
+.confetti{position:absolute;width:12rpx;height:22rpx;top:-30rpx;background:#a88bc4;animation:fall 2.2s ease-in both;z-index:2}
+.confetti-0{left:5%}.confetti-1{left:15%;animation-delay:.2s;background:#fff3bf}.confetti-2{left:25%;animation-delay:.4s}
+.confetti-3{left:35%;animation-delay:.1s;background:#d88e74}.confetti-4{left:45%;animation-delay:.3s}
+.confetti-5{left:55%;animation-delay:.6s;background:#95b399}.confetti-6{left:65%;animation-delay:.2s}
+.confetti-7{left:75%;animation-delay:.5s;background:#fff3bf}.confetti-8{left:85%;animation-delay:.3s}
+.confetti-9{left:95%;animation-delay:.7s;background:#d88e74}.confetti-10{left:30%;animation-delay:.8s}
+.confetti-11{left:70%;animation-delay:.9s;background:#95b399}
+@keyframes fill{from{width:0}to{width:100%}}
+@keyframes fall{to{transform:translateY(600rpx) rotate(420deg);opacity:0}}
+@keyframes ray-spin{to{transform:rotate(360deg)}}
